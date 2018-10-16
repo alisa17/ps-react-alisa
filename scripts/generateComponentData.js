@@ -17,7 +17,7 @@ if (enableWatchMode) {
     generate(paths);
   });
 } else {
-  // Regenerate component metadata
+  // Generate component metadata
   generate(paths);
 }
 
@@ -35,8 +35,8 @@ function generate(paths) {
     : componentData));
 }
 
-function getComponentData(oaths, componentName) {
-  var content = readFile(path.join(paths.components, componentName, componentName, + '.js'));
+function getComponentData(paths, componentName) {
+  var content = readFile(path.join(paths.components, componentName, componentName + '.js'));
   var info = parse(content);
   return {
     name: componentName,
