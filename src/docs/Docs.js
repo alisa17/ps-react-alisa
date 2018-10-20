@@ -12,7 +12,7 @@ export default class Docs extends React.Component {
   }
 
 componentDidMount() {
-  window.addEventListner('haschange', () => {
+  window.addEventListener('haschange', () => {
     this.setState({route: window.location.hash.substr(1)})
   })
 }
