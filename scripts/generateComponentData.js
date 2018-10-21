@@ -43,7 +43,7 @@ function getComponentData(paths, componentName) {
     description: info.description,
     props: info.props,
     code: content,
-    exapmles: getExampleData(paths.examples, componentName)
+    examples: getExampleData(paths.examples, componentName)
   };
 }
 
