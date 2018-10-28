@@ -11,23 +11,22 @@ export default class Docs extends React.Component {
     };
   }
 
-componentDidMount() {
-  window.addEventListener('haschange', () => {
-    this.setState({route: window.location.hash.substr(1)})
-  })
-}
+  componentDidMount() {
+    window.addEventListener('haschange', () => {
+      this.setState({route: window.location.hash.substr(1)})
+    })
+  }
 
-render() {
-  const {route} = this.state;
-  const component = route ? componentData.filter(component =>
-  component.name === route)[0] : componentData[0];
-  console.log(component);
-  return (
-    <div>
-      <Navigation components={componentData.map(component => component.name)} />
-      <ComponentPage component={component} />
-    </div>
-  )
-}
-
+  render() {
+    const {route} = this.state;
+    const component = route
+      ? componentData.filter(component => component.name === route)[0]
+      : componentData[0];
+    return (
+      <div>
+        <Navigation components={componentData.map(component => component.name)}/>
+        <ComponentPage component={component}/>
+      </div>
+    )
+  }
 }
